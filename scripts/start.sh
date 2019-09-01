@@ -104,6 +104,11 @@ fi
 
 CONSTELLATION=${ENABLE_CONSTELLATION:-}
 
+echo "------------ start.sh ---------------"
+netstat -atpn
+echo "-------------------------------------"
+
+
 if [ "$NODE_TYPE" == "general" ] && [ ! -z "$CONSTELLATION" ]; then
     echo "[*] Starting Constellation node"
     nohup constellation-node ~/alastria/data/constellation/constellation.conf 2>> ~/alastria/logs/constellation"${_TIME}".log &

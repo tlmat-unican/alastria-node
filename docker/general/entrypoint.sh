@@ -24,6 +24,9 @@ fi
 
 /etc/init.d/nginx start
 nginx -g "daemon off;"
+echo "------------- entrypoint.sh -----------"
+netstat -atpn
+echo "---------------------------------------"
 ARGS="--watch --local-rpc"
 if [ ! $MONITOR_ENABLED -eq 1 ]; then
     ARGS="--watch --local-rpc --no-monitor"
